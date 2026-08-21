@@ -1,102 +1,968 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ignite — Zero Calorie Energy Drink with Desi Flavors | India</title>
-  <meta name="description" content="Ignite is India's zero-sugar, zero-calorie energy drink in Jeera, Jaamun Jolt and Lemon flavors. Clean energy, no crash. ₹50, D2C delivery across India.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero Sugar Energy Drink | Ignite India</title>
+  <meta name="description" content="Discover Ignite, a zero sugar, calorie free energy drink with Indian flavors for workouts, office productivity and everyday energy.">
+  <meta name="keywords" content="energy drink, energy booster, healthy energy drink, zero sugar drink, calorie free drink, workout energy, productivity drink, Indian energy drink, zero sugar energy drink, energy drink for gym, pre workout drink, post workout drink, energy drink for office, affordable energy drink, Indian flavored energy drink, Ignite energy drink, buy Ignite energy drink, Ignite zero sugar, Ignite India">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Ignite — Zero Sugar Energy Drink with Indian Flavors">
+  <meta property="og:description" content="Zero sugar, calorie free energy with Indian flavors. Built for workouts, office productivity and everyday energy.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://ignite.in/">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Ignite Zero Sugar Energy Drink",
+    "brand":{"@type":"Brand","name":"Ignite"},
+    "description":"Zero sugar, calorie free energy drink with Indian flavors for workouts, office productivity and everyday energy.",
+    "category":"Energy Drink",
+    "offers":{"@type":"Offer","priceCurrency":"INR","price":"50","availability":"https://schema.org/InStock","url":"https://ignite.in/flavors"},
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"124"}
+  }
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6EFDF;
+    --paper-deep:#ECE0C4;
+    --paper-deeper:#E2D4AE;
+    --ink:#2B2313;
+    --ink-soft:#5C4E34;
+    --forest:#3F5738;
+    --forest-deep:#2B3B26;
+    --rust:#C1592C;
+    --rust-deep:#9B441F;
+    --jeera:#C79A3D;
+    --jeera-deep:#9C7526;
+    --jaamun:#7A2048;
+    --jaamun-deep:#54132F;
+    --lemon:#AEBB47;
+    --lemon-deep:#7E8C2A;
+    --line: rgba(43,35,19,0.18);
+    --line-soft: rgba(43,35,19,0.09);
+    --radius: 3px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--rust); color:var(--paper);}
+  a{color:inherit;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--rust);
+    font-weight:500;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    line-height:1.06;
+    color:var(--ink);
+  }
+  p{line-height:1.65;}
+
+  /* ---------- NAV ---------- */
+  header.topnav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 40px;
+    background:rgba(246,239,223,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .wordmark{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:23px;
+    letter-spacing:.02em;
+    cursor:pointer;
+    display:flex; align-items:center; gap:9px;
+    color:var(--forest);
+  }
+  .wordmark .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--rust);
+    display:inline-block;
+  }
+  nav.links{display:flex; gap:6px;}
+  nav.links button{
+    background:none; border:none; color:var(--ink);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px; letter-spacing:.09em; text-transform:uppercase;
+    padding:10px 16px; cursor:pointer; opacity:.62;
+    border-bottom:2px solid transparent;
+    transition:opacity .2s, border-color .2s;
+  }
+  nav.links button:hover{opacity:1;}
+  nav.links button.active{opacity:1; border-color:var(--rust); color:var(--rust);}
+  .nav-cta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+    background:var(--forest); color:var(--paper);
+    padding:11px 20px; border-radius:var(--radius);
+    border:none; cursor:pointer;
+  }
+  .nav-cta:hover{background:var(--forest-deep);}
+
+  main{max-width:1180px; margin:0 auto; padding:0 40px;}
+  section{padding:96px 0;}
+  .page{display:none;}
+  .page.active{display:block; animation:fadein .5s ease;}
+  @keyframes fadein{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+
+  .band{
+    width:100vw; position:relative; left:50%; right:50%;
+    margin-left:-50vw; margin-right:-50vw;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 60px;
+    display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(46px, 5.8vw, 82px);
+    font-style:italic;
+    letter-spacing:-0.01em;
+    font-weight:600;
+  }
+  .hero h1 span{color:var(--rust); font-style:normal;}
+  .hero .sub{
+    max-width:520px; margin-top:24px; font-size:17.5px; color:var(--ink-soft);
+  }
+  .hero .cta-row{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .btn{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
+    padding:15px 26px; border-radius:var(--radius); border:1.5px solid var(--ink); cursor:pointer;
+    background:transparent; color:var(--ink); transition:all .2s;
+  }
+  .btn.solid{background:var(--rust); border-color:var(--rust); color:var(--paper); font-weight:600;}
+  .btn.solid:hover{background:var(--rust-deep); border-color:var(--rust-deep);}
+  .btn:not(.solid):hover{background:var(--ink); color:var(--paper);}
+
+  .hero-visual{
+    position:relative; height:400px; border-radius:8px;
+    background: radial-gradient(circle at 50% 30%, var(--paper-deep) 0%, var(--paper) 70%);
+    display:flex; align-items:flex-end; justify-content:center; gap:8px;
+    padding-bottom:24px;
+  }
+  .hero-visual::after{
+    content:""; position:absolute; bottom:22px; left:14%; right:14%; height:14px;
+    background:radial-gradient(ellipse, rgba(43,35,19,0.22) 0%, transparent 72%);
+    z-index:0;
+  }
+  .bottle-mount{position:relative; z-index:1;}
+  .hero-visual .bottle-mount{width:108px;}
+  .hero-visual .bottle-mount:nth-child(2){width:122px; margin-bottom:-6px;}
+  .bottle-svg{width:100%; height:auto; display:block; filter:drop-shadow(0 18px 20px rgba(43,35,19,0.18));}
+
+  .stamp{
+    position:absolute; top:10px; right:0; width:96px; height:96px;
+    animation: spin 26s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){ .stamp{animation:none;} }
+  @keyframes spin{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+  .strip{
+    border-top:1px dashed var(--line); border-bottom:1px dashed var(--line);
+    padding:18px 0; display:flex; gap:30px; flex-wrap:wrap; justify-content:space-between;
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .strip span b{color:var(--rust); font-weight:700;}
+
+  /* ---------- PAIN/SOLUTION ---------- */
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(30px,3.8vw,44px); font-style:italic; margin-top:10px; font-weight:600;}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);}
+  .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line);}
+  .cell{background:var(--paper); padding:32px 28px;}
+  .cell h3{font-size:19px; font-style:italic; margin-bottom:10px; font-weight:600;}
+  .cell p{color:var(--ink-soft); font-size:14.5px;}
+  .cell .tag{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--rust); margin-bottom:14px; display:block;}
+  .keyword-note strong{font-family:'Fraunces',serif; font-size:17px;}
+  .conversion-panel{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:52px 0 40px;}
+
+  /* ---------- FLAVOR PREVIEW STRIP (home) ---------- */
+  .flavor-preview{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .fcard{
+    border-radius:var(--radius); padding:26px 22px 22px; min-height:230px;
+    display:flex; flex-direction:column; justify-content:space-between; gap:14px;
+    cursor:pointer; transition:transform .25s, box-shadow .25s;
+    border:1px solid var(--line);
+  }
+  .fcard:hover{transform:translateY(-6px); box-shadow:0 18px 30px -18px rgba(43,35,19,0.35);}
+  .fcard .bottle-mount{width:46px; align-self:flex-end;}
+  .fcard h3{font-size:24px; font-style:italic; font-weight:600;}
+  .fcard p{font-size:13px; opacity:.8; margin:0;}
+  .fcard.c-jeera{background:#EFDCA6;}
+  .fcard.c-jaamun{background:#E3CBD4;}
+  .fcard.c-lemon{background:#E3E5BC;}
+
+  /* ---------- PERSONAS ---------- */
+  .persona{
+    display:grid; grid-template-columns:220px 1fr; gap:34px; padding:32px 0;
+    border-top:1px solid var(--line);
+  }
+  .persona:last-child{border-bottom:1px solid var(--line);}
+  .persona .who{font-family:'JetBrains Mono',monospace;}
+  .persona .who .num{font-size:12px; opacity:.55; color:var(--rust);}
+  .persona .who h3{font-size:21px; font-style:italic; margin-top:6px; font-weight:600;}
+  .persona .who .meta{font-size:12px; opacity:.75; margin-top:8px; line-height:1.7; color:var(--ink-soft);}
+  .persona blockquote{font-family:'Fraunces',serif; font-style:italic; font-size:19px; margin:0 0 14px; color:var(--forest); line-height:1.4; font-weight:500;}
+  .persona .why{font-size:14px; color:var(--ink-soft);}
+
+  /* ---------- TRUST BADGES ---------- */
+  .badge-row{display:flex; gap:26px; flex-wrap:wrap; margin-top:10px;}
+  .badge{display:flex; flex-direction:column; align-items:center; text-align:center; width:96px; gap:9px;}
+  .badge .ring{
+    width:58px; height:58px; border-radius:50%; border:1.4px solid var(--forest);
+    display:flex; align-items:center; justify-content:center; font-size:22px; color:var(--forest);
+    background:var(--paper);
+  }
+  .badge span{font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); line-height:1.4;}
+
+  footer{
+    background:var(--forest-deep); color:var(--paper);
+    padding:50px 40px 40px; margin-top:60px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.05em; opacity:.85;
+  }
+
+  /* ---------- FLAVORS PAGE ---------- */
+  .flavor-hero{padding:96px 0 34px;}
+  .flavor-hero h1{font-size:clamp(38px,5vw,64px); font-style:italic; font-weight:600;}
+  .flavor-feature{
+    display:grid; grid-template-columns:.8fr 1.2fr; gap:60px; align-items:center;
+    padding:64px 0; border-top:1px solid var(--line);
+  }
+  .flavor-feature.reverse{grid-template-columns:1.2fr .8fr;}
+  .flavor-feature.reverse .visual{order:2;}
+  .flavor-feature .visual{
+    height:360px; border-radius:8px; position:relative;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .visual .bottle-mount{width:180px;}
+  .visual.v-jeera{background:radial-gradient(circle at 50% 30%, #F1DEA8 0%, var(--paper) 72%);}
+  .visual.v-jaamun{background:radial-gradient(circle at 50% 30%, #E6CCD8 0%, var(--paper) 72%);}
+  .visual.v-lemon{background:radial-gradient(circle at 50% 30%, #E6E8C0 0%, var(--paper) 72%);}
+  .flavor-copy h2{font-size:42px; font-style:italic; margin:10px 0 14px; font-weight:600;}
+  .flavor-copy .notes{display:flex; gap:8px; flex-wrap:wrap; margin:16px 0 20px;}
+  .flavor-copy .notes span{
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase;
+    border:1px solid var(--line); padding:6px 12px; border-radius:20px; color:var(--ink-soft);
+  }
+  .nutri{
+    display:flex; gap:26px; margin-top:22px; font-family:'JetBrains Mono',monospace;
+    border-top:1px dashed var(--line); border-bottom:1px dashed var(--line); padding:15px 0;
+  }
+  .nutri div{font-size:10.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em;}
+  .nutri div b{display:block; font-size:18px; color:var(--rust); font-family:'Fraunces',serif; font-style:italic; margin-bottom:3px;}
+
+  .soon-head{padding:84px 0 28px; text-align:center;}
+  .soon-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); margin-bottom:100px;}
+  .soon-cell{background:var(--paper-deep); padding:40px 26px 30px; text-align:center; position:relative;}
+  .soon-cell .bottle-mount{width:82px; margin:0 auto 14px;}
+  .soon-cell .lock{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--rust); margin-bottom:6px;}
+  .soon-cell h3{font-size:21px; font-style:italic; opacity:.8; margin-bottom:6px; font-weight:600;}
+  .soon-cell p{font-size:12.5px; opacity:.6; margin:0;}
+
+  /* ---------- STORY PAGE ---------- */
+  .story-hero{padding:100px 0 44px; max-width:820px;}
+  .story-hero h1{font-size:clamp(36px,5vw,58px); font-style:italic; font-weight:600;}
+  .story-block{display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; padding:56px 0; border-top:1px solid var(--line); align-items:start;}
+  .story-block h3{font-size:14px; font-family:'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase; color:var(--rust); font-weight:500;}
+  .story-block p{color:var(--ink-soft); font-size:16px; max-width:560px;}
+  .story-label{display:flex; flex-direction:column; gap:22px;}
+  .story-stat{padding-top:4px;}
+  .story-stat .num{font-family:'Fraunces',serif; font-style:italic; font-weight:600; font-size:56px; color:var(--rust); line-height:1;}
+  .story-stat .cap{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-soft); margin-top:10px; max-width:200px; line-height:1.6;}
+  .story-stat .ring-icon{width:64px; height:64px; border-radius:50%; border:1.4px solid var(--forest); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-style:italic; font-size:22px; color:var(--forest); margin-bottom:16px;}
+  .source-row{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); margin:36px 0;}
+  .source-cell{background:var(--paper); padding:24px 20px;}
+  .source-cell .flavor{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px; color:var(--rust);}
+  .source-cell h4{font-size:18px; font-style:italic; font-family:'Fraunces',serif; font-weight:600; margin:0 0 8px;}
+  .source-cell p{font-size:13px; color:var(--ink-soft); margin:0;}
+
+  .trust-band{background:var(--forest-deep); color:var(--paper); padding:64px 0; margin-top:20px;}
+  .trust-band h3{color:var(--paper); font-family:'JetBrains Mono',monospace; font-size:14px; letter-spacing:.08em; text-transform:uppercase; font-weight:500; opacity:.85;}
+  .trust-band p{color:rgba(246,239,223,0.82); font-size:16px; max-width:640px;}
+  .trust-band .badge .ring{border-color:var(--paper); color:var(--paper); background:transparent;}
+  .trust-band .badge span{color:rgba(246,239,223,0.75);}
+
+  /* ---------- FAQ PAGE ---------- */
+  .faq-hero{padding:100px 0 36px; max-width:700px;}
+  .faq-hero h1{font-size:clamp(34px,4.6vw,54px); font-style:italic; font-weight:600;}
+  .accordion{border-top:1px solid var(--line);}
+  .qa{border-bottom:1px solid var(--line);}
+  .qa button{
+    width:100%; text-align:left; background:none; border:none; color:var(--ink);
+    padding:24px 0; font-family:'Fraunces',serif; font-size:18.5px; font-style:italic; font-weight:600; cursor:pointer;
+    display:flex; justify-content:space-between; align-items:center; gap:20px;
+  }
+  .qa .plus{font-family:'JetBrains Mono',monospace; font-size:19px; color:var(--rust); transition:transform .25s;}
+  .qa.open .plus{transform:rotate(45deg);}
+  .qa .a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .qa.open .a{max-height:260px;}
+  .qa .a p{padding-bottom:24px; color:var(--ink-soft); max-width:640px; font-size:15px;}
+
+  /* ---------- BLOG / JOURNAL ---------- */
+  .blog-hero{padding:96px 0 34px; max-width:760px;}
+  .blog-hero h1{font-size:clamp(38px,5vw,62px); font-style:italic; font-weight:600;}
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding-bottom:100px;}
+  .blog-card{
+    border:1px solid var(--line); border-radius:var(--radius); background:var(--paper-deep);
+    padding:26px 24px 24px; display:flex; flex-direction:column; gap:16px;
+    cursor:pointer; transition:transform .25s, box-shadow .25s;
+  }
+  .blog-card:hover{transform:translateY(-6px); box-shadow:0 18px 30px -18px rgba(43,35,19,0.35);}
+  .blog-card .bottle-mount{width:44px;}
+  .blog-card .meta{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); opacity:.75;}
+  .blog-card h3{font-size:23px; font-style:italic; font-weight:600; margin:4px 0 2px;}
+  .blog-card p{font-size:14px; color:var(--ink-soft); margin:0;}
+  .blog-card .read{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--rust); margin-top:auto;}
+
+  .post{max-width:720px; padding:96px 0 110px;}
+  .post .back{
+    background:none; border:none; font-family:'JetBrains Mono',monospace; font-size:11.5px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); cursor:pointer; padding:0; margin-bottom:34px;
+  }
+  .post .back:hover{color:var(--rust);}
+  .post h1{font-size:clamp(32px,4.4vw,50px); font-style:italic; font-weight:600; margin-top:14px;}
+  .post .post-meta{font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-top:16px; opacity:.8;}
+  .post-hero{display:flex; align-items:center; gap:28px; margin:38px 0 8px; padding:30px; border-radius:8px;}
+  .post-hero.v-jeera{background:radial-gradient(circle at 20% 40%, #F1DEA8 0%, var(--paper) 75%);}
+  .post-hero.v-jaamun{background:radial-gradient(circle at 20% 40%, #E6CCD8 0%, var(--paper) 75%);}
+  .post-hero.v-lemon{background:radial-gradient(circle at 20% 40%, #E6E8C0 0%, var(--paper) 75%);}
+  .post-hero .bottle-mount{width:100px; flex-shrink:0;}
+  .post-hero blockquote{font-family:'Fraunces',serif; font-style:italic; font-size:20px; font-weight:500; color:var(--forest); margin:0; line-height:1.4;}
+  .post-body{margin-top:20px;}
+  .post-body h3{font-size:15px; font-family:'JetBrains Mono',monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--rust); font-weight:500; margin-top:44px; margin-bottom:14px;}
+  .post-body p{color:var(--ink-soft); font-size:16.5px; line-height:1.75; margin-bottom:16px;}
+  .post-note{
+    margin-top:40px; padding:20px 24px; border:1px dashed var(--line); border-radius:var(--radius);
+    background:var(--paper-deep); font-size:13.5px; color:var(--ink-soft); line-height:1.6;
+  }
+  .post-note b{color:var(--ink);}
+  .post-cta{margin-top:44px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+
+  @media (max-width:860px){
+    main{padding:0 22px;}
+    header.topnav{padding:16px 22px;}
+    nav.links{display:none;}
+    .hero, .grid-3, .grid-2, .flavor-preview, .flavor-feature, .flavor-feature.reverse, .story-block, .soon-grid, .source-row, .blog-grid{grid-template-columns:1fr !important;}
+    .flavor-feature.reverse .visual{order:0;}
+    .persona{grid-template-columns:1fr;}
+    .hero{padding-top:64px;}
+    .stamp{display:none;}
+    .post-hero{flex-direction:column; text-align:center;}
+  }
+</style>
 </head>
 <body>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">⚡ Ignite</a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="jeera.html">Jeera</a>
-        <a href="jaamun-jolt.html">Jaamun Jolt</a>
-        <a href="lemon.html">Lemon</a>
-        <a href="blog/index.html">Blog</a>
-      </nav>
-    </div>
-  </header>
+<header class="topnav">
+  <div class="wordmark" onclick="goTo('home')"><span class="dot"></span>IGNITE</div>
+  <nav class="links" id="navLinks">
+    <button data-page="home" class="active">Home</button>
+    <button data-page="flavors">Flavors</button>
+    <button data-page="story">Our Story</button>
+    <button data-page="blog">Journal</button>
+    <button data-page="faq">FAQ</button>
+  </nav>
+  <button class="nav-cta" onclick="goTo('flavors')">Buy Ignite</button>
+</header>
 
-  <section class="hero">
-    <div class="container">
-      <p class="tag">Zero Sugar · Zero Calories · Made in India</p>
-      <h1>Desi flavors.<br>Clean energy. <span class="accent">No crash.</span></h1>
-      <p class="sub">Ignite is India's first zero-calorie energy drink built on the flavors you grew up with — Jeera, Jaamun Jolt &amp; Lemon. Fuel your gym, your desk, or your late-night grind without the sugar wreck.</p>
-      <div class="hero-cta">
-        <a href="jeera.html" class="btn">Shop the Flavors</a>
-        <a href="#why" class="btn ghost">Why Ignite?</a>
-      </div>
-      <p class="price">₹50 per can · D2C delivery across India</p>
-    </div>
-  </section>
+<main>
 
-  <section id="why" class="section">
-    <div class="container">
-      <h2>Why Ignite</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>0 Calories · 0 Sugar</h3>
-          <p>Every can delivers clean energy without the 25–30g of sugar imported energy drinks sneak in. Your macros stay intact.</p>
-        </div>
-        <div class="card">
-          <h3>Real desi taste</h3>
-          <p>Jeera, Jaamun Jolt and Lemon — street-food nostalgia in a can, not the medicinal aftertaste of "healthy" drinks.</p>
-        </div>
-        <div class="card">
-          <h3>Energy without the crash</h3>
-          <p>No jitters, no acidity, no 3 PM wall. Just steady focus for the gym, the office, or the stream.</p>
+  <!-- ================= HOME ================= -->
+  <section class="page active" id="page-home">
+    <div class="hero">
+      <div>
+        <span class="eyebrow">India's Zero-Calorie Energy Drink</span>
+        <h1 style="margin-top:14px;">Zero Sugar Energy<br>With <span>Desi Josh.</span></h1>
+        <p class="sub">Ignite is a zero-sugar, calorie-free energy drink built on the flavors you actually grew up on: Jeera, Jaamun Jolt and Lemon. It is a healthy alternative to sugary energy drinks for daily energy, workouts and office productivity—without the sugar crash or chemical aftertaste.</p>
+        <div class="cta-row">
+          <button class="btn solid" onclick="goTo('flavors')">Buy Ignite →</button>
+          <button class="btn" onclick="goTo('flavors')">Compare Flavors</button>
         </div>
       </div>
+      <div class="hero-visual">
+        <svg class="stamp" viewBox="0 0 100 100">
+          <defs><path id="stampPath" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"/></defs>
+          <circle cx="50" cy="50" r="46" fill="none" stroke="var(--forest)" stroke-width="1" opacity="0.5"/>
+          <text font-family="JetBrains Mono, monospace" font-size="6.3" letter-spacing="2" fill="var(--forest)">
+            <textPath href="#stampPath" startOffset="0%">ZERO SUGAR • DESI FLAVORS • CLEAN ENERGY • </textPath>
+          </text>
+          <circle cx="50" cy="50" r="6" fill="var(--rust)"/>
+        </svg>
+        <div class="bottle-mount" data-flavor="jeera" role="img" aria-label="Ignite Jeera zero sugar energy drink can"></div>
+        <div class="bottle-mount" data-flavor="jaamun" role="img" aria-label="Ignite Jaamun Jolt zero sugar energy drink can"></div>
+        <div class="bottle-mount" data-flavor="lemon" role="img" aria-label="Ignite Lemon zero sugar energy drink can"></div>
+      </div>
     </div>
+    <div class="strip">
+      <span><b>0</b> Kcal</span><span><b>0g</b> Sugar</span><span>₹50–60 / Can</span><span>Made In Bengaluru</span><span>FSSAI Registered</span><span>Indian Energy Drink</span><span>D2C, Pan-India</span>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Healthy Energy, Without The Sugar</span>
+        <h2>A healthy energy drink should not make you choose between energy, taste and zero sugar.</h2>
+      </div>
+      <div class="grid-3">
+        <div class="cell">
+          <span class="tag">Sugar Bombs</span>
+          <h3>25–30g of sugar, zero guilt-free</h3>
+          <p>Imported energy drinks give you the lift and the crash, plus a day's worth of sugar in one can.</p>
+        </div>
+        <div class="cell">
+          <span class="tag">Clinical & Bland</span>
+          <h3>"Healthy" tastes like medicine</h3>
+          <p>Most zero-calorie options taste like artificial berry syrup. Nothing about them feels like home.</p>
+        </div>
+        <div class="cell">
+          <span class="tag">Overpriced Imports</span>
+          <h3>₹100–150 for a can of sugar</h3>
+          <p>Global brands charge a premium for less relevance. We build for the Indian shelf, at an Indian price.</p>
+        </div>
+      </div>
+      <div class="keyword-note" style="margin-top:22px; padding:20px 22px; border:1px dashed var(--line); background:var(--paper-deep); color:var(--ink-soft); font-size:14px;">
+        <strong style="color:var(--ink);">Looking for a healthy alternative to sugary energy drinks?</strong>
+        Ignite is a zero sugar energy drink for young professionals, casual workouts and busy workdays—an Indian flavored energy drink designed for everyday energy without the sugar.
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">The Flavors</span>
+        <h2>Desi on the tongue. Clean on the label.</h2>
+      </div>
+      <div class="flavor-preview">
+        <div class="fcard c-jeera" onclick="goTo('flavors')">
+          <div class="bottle-mount" data-flavor="jeera" role="img" aria-label="Ignite Jeera zero sugar energy drink can"></div>
+          <div><span class="eyebrow">01 / Launch</span><h3>Jeera</h3>
+          <p>Roasted cumin heat, digestive & grounding, the flavor of your nani's after-meal ritual, carbonated.</p></div>
+        </div>
+        <div class="fcard c-jaamun" onclick="goTo('flavors')">
+          <div class="bottle-mount" data-flavor="jaamun" role="img" aria-label="Ignite Jaamun Jolt zero sugar energy drink can"></div>
+          <div><span class="eyebrow">02 / Launch</span><h3>Jaamun Jolt</h3>
+          <p>Deep, wine-dark jamun with a peppery finish, monsoon nostalgia with an actual kick.</p></div>
+        </div>
+        <div class="fcard c-lemon" onclick="goTo('flavors')">
+          <div class="bottle-mount" data-flavor="lemon" role="img" aria-label="Ignite Lemon zero sugar energy drink can"></div>
+          <div><span class="eyebrow">03 / Launch</span><h3>Lemon</h3>
+          <p>Nimbu-pani's sharper cousin, bright, salted-edge citrus that cuts straight through a 3pm slump.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">When You Need Energy</span>
+        <h2>One can for workouts, workdays and everyday productivity.</h2>
+        <p style="color:var(--ink-soft); max-width:680px;">Searching for an energy drink for gym sessions, a pre-workout drink, a post-workout drink or an energy drink for office productivity? Ignite brings zero sugar and Indian flavors into one calorie free energy drink.</p>
+      </div>
+      <div class="grid-3">
+        <div class="cell"><span class="tag">Pre / Post Workout</span><h3>Energy drink for gym routines</h3><p>A zero sugar, calorie free option for casual workouts when you want energy without adding sugar or calories.</p></div>
+        <div class="cell"><span class="tag">Office Productivity</span><h3>Energy for the 3pm slump</h3><p>A practical energy drink for office productivity when coffee or sugary drinks are not what you want.</p></div>
+        <div class="cell"><span class="tag">Everyday Energy</span><h3>Healthy alternative to sugary energy drinks</h3><p>Indian flavors, zero sugar and an accessible ₹50–60 price point for everyday energy seekers.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Built For Real Energy Seekers</span>
+        <h2>From casual workouts to office productivity, Ignite fits the day you actually live.</h2>
+      </div>
+      <div class="persona">
+        <div class="who">
+          <span class="num">01</span>
+          <h3>Rohan, 26<br>Bengaluru</h3>
+          <p class="meta">Senior Business Analyst<br>Weekend CrossFit athlete<br>Segment: Fit Hustlers</p>
+        </div>
+        <div>
+          <blockquote>"I track every macro that enters my body. I refuse to drink something that tastes like pure chemicals."</blockquote>
+          <p class="why">Standard energy drinks blow his calorie deficit; sugar-free ones taste medicinal. Ignite gives him a real pre-workout kick with zero calories and a flavor that doesn't feel like a compromise.</p>
+        </div>
+      </div>
+      <div class="persona">
+        <div class="who">
+          <span class="num">02</span>
+          <h3>Priya, 31<br>Gurgaon</h3>
+          <p class="meta">Product Lead, FinTech<br>Back-to-back-meetings survivor<br>Segment: Desk Grinders</p>
+        </div>
+        <div>
+          <blockquote>"By 3pm my brain is fried and my coffee gives me acidity. I just need a clean reset."</blockquote>
+          <p class="why">Coffee wrecks her stomach, sugary drinks spike-then-crash her focus. Ignite delivers a caffeine lift without the acidity or the mid-deck slump.</p>
+        </div>
+      </div>
+      <div class="persona">
+        <div class="who">
+          <span class="num">03</span>
+          <h3>Aman "Vortex", 21<br>Pune</h3>
+          <p class="meta">B.Tech Student, Streamer<br>4-hour ranked sessions<br>Segment: Gen-Z Gamers</p>
+        </div>
+        <div>
+          <blockquote>"I can't afford to drop 150 bucks a can just to stay sharp for a stream."</blockquote>
+          <p class="why">Imported cans blow his student budget; local sodas crash him mid-match. Ignite is priced for a pocket, engineered for reaction time, and looks good on camera.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="conversion-panel" style="padding-top:20px;">
+      <div class="section-head">
+        <span class="eyebrow">Ready For Ignite?</span>
+        <h2>Buy a zero sugar energy drink made for Indian routines.</h2>
+        <p style="color:var(--ink-soft); max-width:650px;">Choose your flavor and order Ignite online in India. With ₹50–60 pricing, zero sugar and zero calories, Ignite is an affordable alternative to imported energy drinks for workouts and office productivity.</p>
+        <div class="cta-row" style="margin-top:22px;">
+          <button class="btn solid" onclick="goTo('flavors')">Order Ignite Online →</button>
+          <button class="btn" onclick="goTo('faq')">Shipping & FAQs</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0;">
+      <div class="section-head">
+        <span class="eyebrow">Trust, Bottled In</span>
+        <h2>Not just claims. Verified ones.</h2>
+      </div>
+      <div class="badge-row">
+        <div class="badge"><div class="ring">✓</div><span>FSSAI Registered</span></div>
+        <div class="badge"><div class="ring">0g</div><span>Lab-Verified Sugar</span></div>
+        <div class="badge"><div class="ring">🌿</div><span>Real Desi Flavor</span></div>
+        <div class="badge"><div class="ring">IN</div><span>Made In India</span></div>
+        <div class="badge"><div class="ring">♻</div><span>Recycled Bottle</span></div>
+      </div>
+    </section>
   </section>
 
-  <section class="section dark">
-    <div class="container">
-      <h2>Pick your flavor</h2>
-      <div class="cards flavors">
-        <a href="jeera.html" class="flavor jeera">
-          <h3>Jeera</h3>
-          <p>The digestion classic, energized. Earthy, warm, nostalgic.</p>
-          <span class="flavor-link">Explore Jeera →</span>
-        </a>
-        <a href="jaamun-jolt.html" class="flavor jaamun">
-          <h3>Jaamun Jolt</h3>
-          <p>Bold jamun tang with a caffeine kick. Sweet-meets-spicy energy.</p>
-          <span class="flavor-link">Explore Jaamun Jolt →</span>
-        </a>
-        <a href="lemon.html" class="flavor lemon">
-          <h3>Lemon</h3>
-          <p>The nimbu-pani classic, zero guilt. Sharp, zesty, refreshing.</p>
-          <span class="flavor-link">Explore Lemon →</span>
-        </a>
+  <!-- ================= FLAVORS ================= -->
+  <section class="page" id="page-flavors">
+    <div class="flavor-hero">
+      <span class="eyebrow">The Lineup</span>
+      <h1 style="margin-top:14px;">The Zero Sugar Energy Drink<br>For Indian Taste Buds.</h1>
+      <p class="sub" style="margin-top:20px; max-width:600px; color:var(--ink-soft);">Choose a zero sugar energy drink for pre-workout, post-workout or the office. Ignite combines Indian traditional flavors with zero calories, making it an affordable energy drink alternative to imported energy drinks.</p>
+    </div>
+
+    <div class="flavor-feature">
+      <div class="visual v-jeera"><div class="bottle-mount" data-flavor="jeera" role="img" aria-label="Ignite Jeera zero sugar energy drink can"></div></div>
+      <div class="flavor-copy">
+        <span class="eyebrow">01 — Jeera</span>
+        <h2>Jeera</h2>
+        <p>Roasted cumin, gently spiced and faintly smoky—the flavor of the digestive ritual you grew up with, reimagined as a functional energy drink. A zero sugar energy drink for casual workouts and everyday energy, grounding rather than jittery.</p>
+        <div class="notes"><span>Roasted Cumin</span><span>Digestive</span><span>Earthy Finish</span></div>
+        <div class="nutri">
+          <div><b>0 kcal</b>Calories</div>
+          <div><b>0g</b>Sugar</div>
+          <div><b>₹50</b>Per Can</div>
+          <div><b>250ml</b>Format</div>
+        </div>
+        <div class="cta-row" style="margin-top:22px;">
+          <button class="btn solid" type="button">Buy Jeera →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flavor-feature reverse">
+      <div class="flavor-copy">
+        <span class="eyebrow">02 — Jaamun Jolt</span>
+        <h2>Jaamun Jolt</h2>
+        <p>Deep, wine-dark jamun with a peppery, slightly tart edge. Built for anyone seeking a healthy alternative to sugary energy drinks that does not taste syrupy—bold in flavor, never in the label.</p>
+        <div class="notes"><span>Wine-Dark Jamun</span><span>Peppery Edge</span><span>Bold & Tart</span></div>
+        <div class="nutri">
+          <div><b>0 kcal</b>Calories</div>
+          <div><b>0g</b>Sugar</div>
+          <div><b>₹55</b>Per Can</div>
+          <div><b>250ml</b>Format</div>
+        </div>
+        <div class="cta-row" style="margin-top:22px;">
+          <button class="btn solid" type="button">Buy Jaamun Jolt →</button>
+        </div>
+      </div>
+      <div class="visual v-jaamun"><div class="bottle-mount" data-flavor="jaamun" role="img" aria-label="Ignite Jaamun Jolt zero sugar energy drink can"></div></div>
+    </div>
+
+    <div class="flavor-feature">
+      <div class="visual v-lemon"><div class="bottle-mount" data-flavor="lemon" role="img" aria-label="Ignite Lemon zero sugar energy drink can"></div></div>
+      <div class="flavor-copy">
+        <span class="eyebrow">03 — Lemon</span>
+        <h2>Lemon</h2>
+        <p>Nimbu-pani's sharper cousin, bright citrus with a salted edge that cuts through an afternoon slump in one sip. A calorie free energy drink for office productivity and a simple gateway can for first-time Ignite drinkers.</p>
+        <div class="notes"><span>Bright Citrus</span><span>Salted Edge</span><span>Sessionable</span></div>
+        <div class="nutri">
+          <div><b>0 kcal</b>Calories</div>
+          <div><b>0g</b>Sugar</div>
+          <div><b>₹50</b>Per Can</div>
+          <div><b>250ml</b>Format</div>
+        </div>
+        <div class="cta-row" style="margin-top:22px;">
+          <button class="btn solid" type="button">Buy Lemon →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="soon-head">
+      <span class="eyebrow">Coming Soon — Wave 2</span>
+      <h2 style="margin-top:14px; font-style:italic; font-size:clamp(26px,3.6vw,38px); font-weight:600;">Expansion flavors, in development.</h2>
+    </div>
+    <div class="soon-grid">
+      <div class="soon-cell">
+        <div class="bottle-mount" data-flavor="kalakhatta" data-ghost="true" role="img" aria-label="Ignite Kala Khatta energy drink in development"></div>
+        <div class="lock">● In R&D</div>
+        <h3>Kala Khatta</h3>
+        <p>Street-side sweet-tart nostalgia, carbonated.</p>
+      </div>
+      <div class="soon-cell">
+        <div class="bottle-mount" data-flavor="aampanna" data-ghost="true" role="img" aria-label="Ignite Aam Panna energy drink in development"></div>
+        <div class="lock">● In R&D</div>
+        <h3>Aam Panna</h3>
+        <p>Raw mango, roasted and cooling, a summer flavor, year-round.</p>
+      </div>
+      <div class="soon-cell">
+        <div class="bottle-mount" data-flavor="kokum" data-ghost="true" role="img" aria-label="Ignite Kokum energy drink in development"></div>
+        <div class="lock">● In R&D</div>
+        <h3>Kokum</h3>
+        <p>Konkan-coast tang with a clean, mineral finish.</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>Built for your grind</h2>
-      <div class="cards">
-        <div class="card"><h3>🏋️ Pre-workout</h3><p>Zero-calorie fuel for gym sessions and runs — no calorie deficit broken.</p></div>
-        <div class="card"><h3>💼 3 PM slump</h3><p>Desk-friendly focus without coffee acidity or sugar crashes.</p></div>
-        <div class="card"><h3>🎮 Late-night gaming</h3><p>Sleep-safe energy for streams and study nights. No crash mid-game.</p></div>
+  <!-- ================= STORY ================= -->
+  <section class="page" id="page-story">
+    <div class="story-hero">
+      <span class="eyebrow">Our Story</span>
+      <h1 style="margin-top:14px;">We didn't want to choose between the drink that tastes like home and the drink that gets us through the day.</h1>
+    </div>
+
+    <div class="story-block">
+      <div class="story-label">
+        <h3>The Gap</h3>
+        <div class="story-stat">
+          <div class="num">25–30g</div>
+          <div class="cap">Sugar in a standard imported energy drink can</div>
+        </div>
       </div>
-      <p class="center"><a href="jeera.html" class="btn">Start with a can — ₹50</a></p>
-      <p class="center" style="margin-top:8px;"><a href="blog/jeera-health-benefits.html">From the blog: Jeera Drink Health Benefits →</a></p>
+      <div>
+        <p>Energy drinks sold in India are, functionally, imports with a local sticker. Red Bull and Monster taste like Western fruit syrup and carry 25–30g of sugar a can. The "healthy" alternatives that do exist taste clinical: sugar-free, but joyless.</p>
+        <p>Meanwhile, the flavors that actually mean something to us, jeera, jamun, nimbu-pani, sit in kitchens and roadside stalls, not on the energy-drink shelf. Nobody had bottled the taste of a 3pm chaat break into something you could actually train on.</p>
+      </div>
+    </div>
+
+    <div class="story-block">
+      <div class="story-label">
+        <h3>The Answer</h3>
+        <div class="story-stat">
+          <div class="num">₹50–60</div>
+          <div class="cap">Mid-market pricing. Not import-market.</div>
+        </div>
+      </div>
+      <div>
+        <p>Ignite starts from flavor, not from "sugar-free" as an afterthought. Every bottle is zero-calorie and zero-sugar by design, but the flavor comes first, built around real Indian taste memories rather than a diluted version of a Western profile.</p>
+        <p>We make it in Bengaluru, sell it direct, and price it at ₹50–60, mid-market, not import-market, because the people we built this for are training, working, and gaming on real Indian salaries, not import budgets.</p>
+      </div>
+    </div>
+
+    <div class="story-block">
+      <div class="story-label">
+        <h3>Sourced With Intent</h3>
+        <div class="story-stat">
+          <div class="ring-icon">3</div>
+          <div class="cap">Regional taste traditions, bottled as they are, not diluted into one generic profile</div>
+        </div>
+      </div>
+      <div>
+        <p>Each flavor draws from a specific regional taste tradition. We're not inventing desi flavor as a gimmick, we're bottling recipes and taste memories that already exist, just never in a bottle built for your gym bag.</p>
+        <div class="source-row">
+          <div class="source-cell">
+            <div class="flavor">Jeera</div>
+            <h4>The After-Meal Ritual</h4>
+            <p>Roasted cumin, traditionally sipped for digestion, reworked as a grounding, functional energy base.</p>
+          </div>
+          <div class="source-cell">
+            <div class="flavor">Jaamun Jolt</div>
+            <h4>Monsoon Memory</h4>
+            <p>The tart, wine-dark fruit of the monsoon season, given a peppery, bolder edge for the bottle.</p>
+          </div>
+          <div class="source-cell">
+            <div class="flavor">Lemon</div>
+            <h4>The Roadside Nimbu-Pani</h4>
+            <p>India's original electrolyte drink, carbonated and sharpened for an instant afternoon reset.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-band band">
+      <div style="max-width:1180px; margin:0 auto; padding:0 40px;">
+        <h3>Trust, On The Label</h3>
+        <p style="margin-top:14px;">Health claims in this category get thrown around loosely. Ours don't. "Zero sugar" is lab-substantiated per FSSAI/ASCI norms, and every batch is FSSAI registered, because a functional drink has to earn the word "clean," not just print it.</p>
+        <div class="badge-row" style="margin-top:34px;">
+          <div class="badge"><div class="ring">✓</div><span>FSSAI Registered</span></div>
+          <div class="badge"><div class="ring">0g</div><span>Lab-Verified Sugar</span></div>
+          <div class="badge"><div class="ring">IN</div><span>Made In India</span></div>
+          <div class="badge"><div class="ring">D2C</div><span>No Middlemen Markup</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <p><strong>Ignite</strong> — Zero calorie. Zero sugar. Desi flavors. Energy.</p>
-      <p class="small">FSSAI compliant · Made in India · D2C delivery · © 2026 Ignite Beverages (fictional brand for a course project)</p>
+  <!-- ================= BLOG / JOURNAL ================= -->
+  <section class="page" id="page-blog">
+    <div class="blog-hero">
+      <span class="eyebrow">The Journal</span>
+      <h1 style="margin-top:14px;">Flavor, explained.</h1>
+      <p class="sub" style="margin-top:18px; color:var(--ink-soft);">Before any of these were cans, they were kitchen rituals. A closer look at the traditions behind each Ignite flavor, and what actually goes into the bottle.</p>
     </div>
-  </footer>
+    <div class="blog-grid">
+      <div class="blog-card" onclick="goTo('blog-jeera')">
+        <div class="bottle-mount" data-flavor="jeera" role="img" aria-label="Ignite Jeera zero sugar energy drink can"></div>
+        <div class="meta">Wellness Notes · 4 min read</div>
+        <h3>The Quiet Power of Jeera</h3>
+        <p>Why Ignite built a zero sugar energy drink around roasted cumin—and why this Indian flavored energy drink works for everyday energy.</p>
+        <div class="read">Read the story →</div>
+      </div>
+      <div class="blog-card" onclick="goTo('blog-jaamun')">
+        <div class="bottle-mount" data-flavor="jaamun" role="img" aria-label="Ignite Jaamun Jolt zero sugar energy drink can"></div>
+        <div class="meta">Wellness Notes · 4 min read</div>
+        <h3>Jaamun: Monsoon's Favorite, Bottled</h3>
+        <p>The roadside fruit with the purple-stained fingers, and why Jaamun Jolt is a healthy alternative to sugary energy drinks without a syrupy taste.</p>
+        <div class="read">Read the story →</div>
+      </div>
+      <div class="blog-card" onclick="goTo('blog-lemon')">
+        <div class="bottle-mount" data-flavor="lemon" role="img" aria-label="Ignite Lemon zero sugar energy drink can"></div>
+        <div class="meta">Wellness Notes · 3 min read</div>
+        <h3>Nimbu-Pani's Sharper Cousin</h3>
+        <p>India's original recovery drink gets a zero sugar, calorie free upgrade for pre-workout, post-workout and the office.</p>
+        <div class="read">Read the story →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Blog post: Jeera ---- -->
+  <section class="page" id="page-blog-jeera">
+    <div class="post">
+      <button class="back" onclick="goTo('blog')">← All Posts</button>
+      <span class="eyebrow">Wellness Notes · Jeera</span>
+      <h1>The Quiet Power of Jeera</h1>
+      <div class="post-meta">4 min read · The Ignite Journal</div>
+      <div class="post-hero v-jeera">
+        <div class="bottle-mount" data-flavor="jeera" role="img" aria-label="Ignite Jeera zero sugar energy drink can"></div>
+        <blockquote>"Jeera pani wasn't a wellness trend in our house. It was just what appeared after every meal."</blockquote>
+      </div>
+      <div class="post-body">
+        <p>Long before "digestive bitters" and "gut health" became shelf categories, most Indian kitchens already had an answer: a small glass of jeera pani, or a pinch of roasted cumin stirred into chaas after a heavy meal. It wasn't marketed as anything. It was just what happened after lunch.</p>
+
+        <h3>A digestive tradition, not a trend</h3>
+        <p>Cumin has held a steady place in Indian home remedies and Ayurvedic practice for generations, most often reached for after a meal, not before a workout. That's part of what drew us to it first: jeera has never been about a jolt of energy. It's about settling, not spiking.</p>
+
+        <h3>What's actually in the seed</h3>
+        <p>Cumin seeds carry a warm, earthy aromatic compound called cuminaldehyde, along with small amounts of iron and plant antioxidants. None of that is why it tastes good, but it's part of why the flavor feels familiar rather than invented. It's also, quite simply, a flavor most of us already associate with feeling better, not worse, after eating.</p>
+
+        <h3>Why we built our first flavor around it</h3>
+        <p>Every energy drink on the shelf leads with citrus or berry, flavors borrowed from somewhere else. Jeera let us lead with something that already belonged here. It's grounding rather than jittery, which is exactly the note we wanted for a can you might reach for mid-workday, not just mid-workout.</p>
+
+        <div class="post-note"><b>A quick note:</b> this article shares traditional and general nutrition context around cumin as an ingredient. It isn't medical advice, and Ignite doesn't make specific health or treatment claims for any flavor. Our "zero sugar, zero calorie" claim is separately lab-verified per FSSAI and ASCI norms. If you have a specific health concern, please check with a doctor.</div>
+      </div>
+      <div class="post-cta">
+        <button class="btn solid" onclick="goTo('flavors')">Buy Ignite Jeera →</button>
+        <button class="btn" onclick="goTo('blog')">More from the Journal</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Blog post: Jaamun ---- -->
+  <section class="page" id="page-blog-jaamun">
+    <div class="post">
+      <button class="back" onclick="goTo('blog')">← All Posts</button>
+      <span class="eyebrow">Wellness Notes · Jaamun Jolt</span>
+      <h1>Jaamun: Monsoon's Favorite, Bottled</h1>
+      <div class="post-meta">4 min read · The Ignite Journal</div>
+      <div class="post-hero v-jaamun">
+        <div class="bottle-mount" data-flavor="jaamun" role="img" aria-label="Ignite Jaamun Jolt zero sugar energy drink can"></div>
+        <blockquote>"You knew it was jamun season by the purple stains on everyone's school uniform."</blockquote>
+      </div>
+      <div class="post-body">
+        <p>Jamun, sometimes called Indian blackberry, shows up for exactly a few weeks a year, usually with the first monsoon showers, sold in small paper cones by roadside vendors with a sprinkle of rock salt. It's tart, faintly astringent, and impossible to eat neatly. Everyone has a jamun memory, most of them slightly stained purple.</p>
+
+        <h3>Folklore meets flavor</h3>
+        <p>In traditional and folk practice, jamun has long carried a reputation as a "friendly" fruit, one people reach for without much ceremony. We're careful here: we're not making a formal health claim about jamun or Jaamun Jolt, only pointing at why the fruit has stayed a household favorite for so long, alongside genuinely good nutrition basics like vitamin C and the anthocyanins that give it its deep, wine-dark color.</p>
+
+        <h3>The boldest can in the lineup, on purpose</h3>
+        <p>Where Jeera is grounding and Lemon is bright, Jaamun Jolt is built to feel a little more daring, a peppery, tart edge that doesn't apologize for itself. It's the flavor for the persona who wants their energy drink to actually taste like something, not just taste "clean."</p>
+
+        <h3>Why it's still just a can of Ignite</h3>
+        <p>We didn't set out to bottle a supplement. We set out to bottle a flavor memory that never made it onto an energy-drink shelf before, at zero sugar, with a caffeine lift that's dosed the same as our other two flavors.</p>
+
+        <div class="post-note"><b>A quick note:</b> this article shares traditional and general nutrition context around jamun as a fruit. It isn't medical advice, and Ignite doesn't make specific health or treatment claims for any flavor. Our "zero sugar, zero calorie" claim is separately lab-verified per FSSAI and ASCI norms. If you have a specific health concern, please check with a doctor.</div>
+      </div>
+      <div class="post-cta">
+        <button class="btn solid" onclick="goTo('flavors')">Buy Ignite Jaamun →</button>
+        <button class="btn" onclick="goTo('blog')">More from the Journal</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Blog post: Lemon ---- -->
+  <section class="page" id="page-blog-lemon">
+    <div class="post">
+      <button class="back" onclick="goTo('blog')">← All Posts</button>
+      <span class="eyebrow">Wellness Notes · Lemon</span>
+      <h1>Nimbu-Pani's Sharper Cousin</h1>
+      <div class="post-meta">3 min read · The Ignite Journal</div>
+      <div class="post-hero v-lemon">
+        <div class="bottle-mount" data-flavor="lemon" role="img" aria-label="Ignite Lemon zero sugar energy drink can"></div>
+        <blockquote>"Nimbu pani was the original recovery drink. Nobody called it that. It just worked."</blockquote>
+      </div>
+      <div class="post-body">
+        <p>Long before "electrolyte drinks" had their own supermarket aisle, India had nimbu pani: lemon, water, a pinch of salt, sometimes a little roasted cumin. Sold from carts outside train stations and construction sites, handed out at family functions, made at home after anyone came in from the heat.</p>
+
+        <h3>The original recovery ritual</h3>
+        <p>Pairing citrus with salt is a genuinely old habit here, reached for after heat, exertion, or just a long day, well before it had a category name. Ignite's Lemon flavor is a nod to that instinct: bright, a little salted at the edges, built to reset rather than overwhelm.</p>
+
+        <h3>What citrus actually brings to the can</h3>
+        <p>Lemon is a reliable source of vitamin C, and its acidity is doing real work in the can too: it cuts through sweetness and keeps the flavor feeling sharp rather than syrupy, which matters a lot when there's zero sugar to hide behind.</p>
+
+        <h3>Why it's our gateway flavor</h3>
+        <p>If Jeera is the most traditional flavor and Jaamun Jolt is the boldest, Lemon is the easiest first can. It's the flavor we hand to someone trying Ignite for the first time, familiar enough to trust immediately, sharp enough to actually wake you up.</p>
+
+        <div class="post-note"><b>A quick note:</b> this article shares general nutrition context around lemon and citrus as an ingredient. It isn't medical advice, and Ignite doesn't make specific health or treatment claims for any flavor. Our "zero sugar, zero calorie" claim is separately lab-verified per FSSAI and ASCI norms. If you have a specific health concern, please check with a doctor.</div>
+      </div>
+      <div class="post-cta">
+        <button class="btn solid" onclick="goTo('flavors')">Buy Ignite Lemon →</button>
+        <button class="btn" onclick="goTo('blog')">More from the Journal</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="page" id="page-faq">
+    <div class="faq-hero">
+      <span class="eyebrow">Good To Know</span>
+      <h1 style="margin-top:14px;">Frequently asked.</h1>
+    </div>
+    <div class="accordion" id="accordion">
+      <div class="qa">
+        <button>Is Ignite actually zero sugar? <span class="plus">+</span></button>
+        <div class="a"><p>Yes, every flavor is formulated at 0g sugar and 0 kcal per can, lab-tested and substantiated in line with FSSAI and ASCI advertising norms before any claim goes on the label or the site.</p></div>
+      </div>
+      <div class="qa">
+        <button>How much caffeine is in Ignite, and is it good for pre-workout? <span class="plus">+</span></button>
+        <div class="a"><p>Ignite is caffeine-balanced to give a clean lift without the jitters or the crash, comparable to a strong cup of coffee, dosed consistently across all three flavors.</p></div>
+      </div>
+      <div class="qa">
+        <button>Where can I buy Ignite zero sugar energy drink in India? <span class="plus">+</span></button>
+        <div class="a"><p>Ignite is made in Bengaluru and sold direct-to-consumer, shipped across India. We're D2C-first by design, no retail markup, no middlemen, so you get more can for ₹50–60.</p></div>
+      </div>
+      <div class="qa">
+        <button>Can I order Ignite energy drink online in India? <span class="plus">+</span></button>
+        <div class="a"><p>Yes, we ship nationwide from Bengaluru. Subscribe & save option available for regulars who don't want to reorder every two weeks.</p></div>
+      </div>
+      <div class="qa">
+        <button>When are the new flavors launching? <span class="plus">+</span></button>
+        <div class="a"><p>Kala Khatta, Aam Panna and Kokum are currently in development. Join the list on any product page to get notified the moment each one ships.</p></div>
+      </div>
+      <div class="qa">
+        <button>Is Ignite a good zero sugar energy drink for gym and pre-workout? <span class="plus">+</span></button>
+        <div class="a"><p>Ignite is built for exactly that use-case, a zero-calorie pre-workout or midday lift that won't touch your macro tracking. As with any caffeinated product, check in with a doctor if you have an existing condition.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>© Ignite Beverages Pvt. Ltd. — a fictional brand built for a Digital Marketing course project.</div>
+  <div>Bengaluru, India · FSSAI Registered (fictional) · ignite.in</div>
+</footer>
+
+<script>
+  function goTo(page){
+    const el = document.getElementById('page-' + page);
+    if(!el) return;
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    const navKey = page.startsWith('blog') ? 'blog' : page;
+    document.querySelectorAll('nav.links button').forEach(b => b.classList.toggle('active', b.dataset.page === navKey));
+    window.scrollTo({top:0, behavior:'instant'});
+    history.replaceState(null, '', '#' + page);
+  }
+  document.querySelectorAll('nav.links button').forEach(b => {
+    b.addEventListener('click', () => goTo(b.dataset.page));
+  });
+  document.querySelectorAll('.qa button').forEach(btn => {
+    btn.addEventListener('click', () => { btn.parentElement.classList.toggle('open'); });
+  });
+
+  /* ---------- illustrated bottle artwork ---------- */
+  const FLAVORS = {
+    jeera:      { name:"Jeera",       sub:"ZERO SUGAR", liquid:"#C79A3D", liquidDeep:"#9C7526", cap:"#9C7526", capDeep:"#7A5A1C",
+                  emblem:`<g fill="#2B2313"><ellipse cx="65" cy="186" rx="3" ry="1.3" transform="rotate(-20 65 186)"/><ellipse cx="72" cy="190" rx="3" ry="1.3" transform="rotate(15 72 190)"/><ellipse cx="67" cy="195" rx="3" ry="1.3" transform="rotate(-10 67 195)"/></g>` },
+    jaamun:     { name:"Jaamun Jolt", sub:"ZERO SUGAR", liquid:"#7A2048", liquidDeep:"#54132F", cap:"#54132F", capDeep:"#3A0D20",
+                  emblem:`<g fill="#2B2313"><circle cx="66" cy="188" r="3"/><circle cx="73" cy="191" r="3"/><circle cx="69" cy="195" r="3"/><path d="M69 183 Q73 179 77 183 Q73 186 69 183 Z"/></g>` },
+    lemon:      { name:"Lemon",       sub:"ZERO SUGAR", liquid:"#AEBB47", liquidDeep:"#7E8C2A", cap:"#7E8C2A", capDeep:"#606B1E",
+                  emblem:`<g fill="none" stroke="#2B2313" stroke-width="0.8"><circle cx="70" cy="190" r="7"/><line x1="70" y1="183" x2="70" y2="197"/><line x1="63" y1="190" x2="77" y2="190"/><line x1="65" y1="185" x2="75" y2="195"/><line x1="75" y1="185" x2="65" y2="195"/></g>` },
+    kalakhatta: { name:"Kala Khatta" },
+    aampanna:   { name:"Aam Panna" },
+    kokum:      { name:"Kokum" },
+  };
+
+  function bottleSVG(f){
+    return `<svg viewBox="0 0 140 340" class="bottle-svg">
+      <ellipse cx="70" cy="330" rx="42" ry="9" fill="rgba(43,35,19,0.18)"/>
+      <rect x="56" y="6" width="28" height="24" rx="4" fill="${f.cap}"/>
+      <rect x="56" y="26" width="28" height="5" fill="${f.capDeep}"/>
+      <path d="M61 30 L61 54 Q61 64 51 70 L51 88 L89 88 L89 70 Q79 64 79 54 L79 30 Z" fill="${f.liquid}"/>
+      <path d="M51 88 L51 298 Q51 318 70 318 Q89 318 89 298 L89 88 Z" fill="${f.liquid}"/>
+      <path d="M51 88 L51 298 Q51 318 70 318 L70 88 Z" fill="${f.liquidDeep}" opacity="0.35"/>
+      <rect x="55" y="94" width="5" height="195" rx="2.5" fill="rgba(255,255,255,0.28)"/>
+      <rect x="44" y="148" width="52" height="92" rx="3" fill="#F6EFDF" stroke="#2B2313" stroke-width="1.2"/>
+      <text x="70" y="164" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.2" letter-spacing="1.4" fill="#2B2313">IGNITE</text>
+      <line x1="52" y1="170" x2="88" y2="170" stroke="#2B2313" stroke-width="0.6" opacity="0.5"/>
+      <circle cx="70" cy="190" r="13" fill="none" stroke="#2B2313" stroke-width="1"/>
+      ${f.emblem}
+      <text x="70" y="221" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="600" font-size="12" fill="#2B2313">${f.name}</text>
+      <line x1="52" y1="228" x2="88" y2="228" stroke="#2B2313" stroke-width="0.6" opacity="0.5"/>
+      <text x="70" y="236" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="5" letter-spacing="0.6" fill="#2B2313" opacity="0.65">${f.sub}</text>
+    </svg>`;
+  }
+
+  function ghostBottleSVG(f){
+    return `<svg viewBox="0 0 140 340" class="bottle-svg">
+      <ellipse cx="70" cy="330" rx="42" ry="9" fill="rgba(43,35,19,0.08)"/>
+      <rect x="56" y="6" width="28" height="24" rx="4" fill="none" stroke="#2B2313" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+      <path d="M61 30 L61 54 Q61 64 51 70 L51 88 L89 88 L89 70 Q79 64 79 54 L79 30 Z" fill="none" stroke="#2B2313" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+      <path d="M51 88 L51 298 Q51 318 70 318 Q89 318 89 298 L89 88 Z" fill="none" stroke="#2B2313" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+      <rect x="44" y="148" width="52" height="92" rx="3" fill="none" stroke="#2B2313" stroke-width="1" stroke-dasharray="2 2" opacity="0.45"/>
+      <text x="70" y="188" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="600" font-size="11" fill="#2B2313" opacity="0.6">${f.name}</text>
+      <text x="70" y="204" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="4.6" letter-spacing="0.6" fill="#2B2313" opacity="0.5">IN R&amp;D</text>
+    </svg>`;
+  }
+
+  document.querySelectorAll('.bottle-mount').forEach(el => {
+    const key = el.dataset.flavor;
+    const f = FLAVORS[key];
+    if(!f) return;
+    el.innerHTML = el.dataset.ghost ? ghostBottleSVG(f) : bottleSVG(f);
+  });
+
+  const initial = (location.hash || '#home').replace('#','');
+  if(document.getElementById('page-' + initial)) goTo(initial); else goTo('home');
+</script>
 
 </body>
 </html>

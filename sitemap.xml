@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ignite.in/</loc><priority>1.0</priority></url>
-  <url><loc>https://ignite.in/jeera.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ignite.in/jaamun-jolt.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ignite.in/lemon.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ignite.in/blog/jeera-health-benefits.html</loc><priority>0.7</priority></url>
-  <url><loc>https://ignite.in/blog/index.html</loc><priority>0.6</priority></url>
-  <url><loc>https://ignite.in/blog/jamun-drink-benefits.html</loc><priority>0.7</priority></url>
-  <url><loc>https://ignite.in/blog/lemon-water-energy-benefits.html</loc><priority>0.7</priority></url>
+  <url><loc>https://neinun.github.io/dm-project/</loc><priority>1.0</priority></url>
 </urlset>
